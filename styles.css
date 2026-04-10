@@ -93,6 +93,13 @@ button:hover {
 
 .message {
   margin: 0.75rem 0 0;
-  color: var(--success);
   min-height: 1.25rem;
+}
+
+.message--success {
+  color: var(--success);
+}
+
+.message--error {
+  color: #b91c1c;
 }
