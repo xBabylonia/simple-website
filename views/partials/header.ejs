@@ -14,12 +14,15 @@
     })();
   </script>
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css" integrity="sha512-XA4XyIWfTQ4rWgNBtr1cMNukdxbYlR5c+EMF4iAfDdc0AGJi/7uWGINuD/7++UZ5EONosFVJeFt3PcTJS3BM4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <header class="site-header sticky">
     <nav class="navbar container">
       <div class="nav-left">
         <a href="/" class="brand">⚙️ Multi-Tool Utility</a>
+        <a href="/" class="nav-link <%= currentPath === '/' ? 'active' : '' %>">Home</a>
+        <a href="/tools/json-formatter" class="nav-link <%= currentPath.startsWith('/tools') ? 'active' : '' %>">Tools</a>
       </div>
 
       <div class="nav-right">

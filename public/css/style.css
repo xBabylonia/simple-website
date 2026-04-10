@@ -56,6 +56,22 @@ body {
   font-weight: 700;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-link.active {
+  color: var(--primary);
+}
+
 .nav-right {
   display: flex;
   align-items: center;
