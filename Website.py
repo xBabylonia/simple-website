@@ -25,8 +25,8 @@
 #
 # DEPENDENCIES (pip install)
 # --------------------------
-#   pip install pyyaml tomllib-shim Pygments
-#   # tomllib is built-in for Python >= 3.11
+#   pip install PyYAML tomli
+#   # tomllib is built-in for Python >= 3.11; tomli is the backport for < 3.11
 #   # All other dependencies are from the standard library.
 #
 ################################################################################
@@ -40,6 +40,7 @@ import contextlib
 import hashlib
 import http.server
 import json
+import functools
 import logging
 import mimetypes
 import os
@@ -489,6 +490,32 @@ def _get_attr(tag_attrs: str, attr: str) -> str:
     return ""
 
 
+def _has_attr(tag_attrs: str, attr: str) -> bool:
+    """
+    Return *True* if *attr* is present in *tag_attrs* (regardless of value).
+
+    Unlike :func:`_get_attr`, this correctly distinguishes between a missing
+    attribute and an attribute with an empty string value (e.g. ``alt=""``).
+
+    Parameters
+    ----------
+    tag_attrs:
+        Raw attribute string (content between ``<tagname`` and ``>``).
+    attr:
+        Attribute name to check (case-insensitive).
+
+    Returns
+    -------
+    bool
+        ``True`` when the attribute is present.
+    """
+    pattern = re.compile(
+        r"\b" + re.escape(attr) + r"\b",
+        re.IGNORECASE,
+    )
+    return bool(pattern.search(tag_attrs))
+
+
 def parse_html_file(path: Path, root: Path) -> HtmlReport:
     """
     Parse *path* and return an :class:`HtmlReport` with structural metadata.
@@ -638,7 +665,7 @@ def parse_html_file(path: Path, root: Path) -> HtmlReport:
         alt = _get_attr(attrs, "alt")
         if src:
             report.images.append(src)
-        if not alt and alt != "":
+        if not _has_attr(attrs, "alt"):
             # alt="" is valid for decorative images; missing attr is a bug
             report.issues.append(
                 Issue(
@@ -1197,7 +1224,7 @@ def serve(root: Path, host: str, port: int) -> None:
             logger.error("Port %d is already in use on %s.", port, host)
             sys.exit(EXIT_IO_ERROR)
 
-    handler = lambda *args, **kwargs: _SilentHandler(*args, directory=str(root), **kwargs)  # noqa: E731
+    handler = functools.partial(_SilentHandler, directory=str(root))
     server = http.server.HTTPServer((host, port), handler)
     url = f"http://{host}:{port}"
     print(f"Serving {root}  →  {url}")
@@ -1215,9 +1242,9 @@ def serve(root: Path, host: str, port: int) -> None:
 # ---------------------------------------------------------------------------
 
 _SEVERITY_COLOUR = {
-    "error":   "\033[91m",  # bright red
+    "error": "\033[91m",    # bright red
     "warning": "\033[93m",  # yellow
-    "info":    "\033[96m",  # cyan
+    "info": "\033[96m",     # cyan
 }
 _RESET = "\033[0m"
 _BOLD = "\033[1m"
