@@ -1,0 +1,30 @@
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <span>© <%= new Date().getFullYear() %> Multi-Tool Utility</span>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/tools/json-formatter">Tools</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js" integrity="sha512-X9wM8g5RUXuI4duCMsZ/HXXIQK5vCk1vZ1tcHTfb3e8DqRLVQjaxAg/P6nxsVXni4eWh05rq6ArlKkhxJMu38w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme') || 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    }
+  </script>
+
+  <% if (pageScript) { %>
+    <script src="/js/<%= pageScript %>"></script>
+  <% } %>
+</body>
+</html>
