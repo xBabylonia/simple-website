@@ -1,0 +1,21 @@
+<%- include('../partials/header', { title, description, showSearch, currentPath }) %>
+
+<section class="tool-page card">
+  <h1>JSON Formatter & Validator</h1>
+  <p class="muted">Paste JSON, then format, minify, validate, and copy results.</p>
+
+  <label for="jsonInput">JSON Input</label>
+  <textarea id="jsonInput" rows="12" placeholder='{"name":"example"}'></textarea>
+
+  <div class="btn-row wrap">
+    <button id="formatJson" class="btn" type="button">Format</button>
+    <button id="minifyJson" class="btn ghost" type="button">Minify</button>
+    <button id="validateJson" class="btn ghost" type="button">Validate</button>
+    <button id="copyJson" class="btn ghost" type="button">Copy Output</button>
+  </div>
+
+  <p id="jsonStatus" class="muted"></p>
+  <pre class="output-block"><code id="jsonOutput" class="language-json"></code></pre>
+</section>
+
+<%- include('../partials/footer', { pageScript }) %>

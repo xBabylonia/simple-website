@@ -1,0 +1,30 @@
+<%- include('partials/header', { title, description, showSearch, currentPath }) %>
+
+<section class="hero card">
+  <h1>Simple Multi-Tool Utility Website</h1>
+  <p>Fast browser-based tools for developers, writers, designers, and security workflows.</p>
+  <span class="badge"><%= tools.length %> tools</span>
+</section>
+
+<section class="tabs" id="categoryTabs" aria-label="Tool categories">
+  <button class="tab active" data-category="all">All</button>
+  <button class="tab" data-category="text">Text</button>
+  <button class="tab" data-category="dev">Dev</button>
+  <button class="tab" data-category="colors">Colors</button>
+  <button class="tab" data-category="security">Security</button>
+</section>
+
+<section class="tool-grid" id="toolGrid">
+  <% tools.forEach(tool => { %>
+    <article class="tool-card card" data-name="<%= tool.name.toLowerCase() %>" data-desc="<%= tool.shortDescription.toLowerCase() %>" data-category="<%= tool.category.toLowerCase() %>">
+      <div class="tool-icon"><%= tool.icon %></div>
+      <h3><%= tool.name %></h3>
+      <p><%= tool.shortDescription %></p>
+      <a class="btn" href="/tools/<%= tool.slug %>">Open</a>
+    </article>
+  <% }) %>
+</section>
+
+<p id="emptyState" class="muted hidden">No tools found for the current filters.</p>
+
+<%- include('partials/footer', { pageScript }) %>

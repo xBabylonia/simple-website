@@ -1,0 +1,25 @@
+<%- include('../partials/header', { title, description, showSearch, currentPath }) %>
+
+<section class="tool-page card">
+  <h1>Word & Character Counter</h1>
+  <p class="muted">Type text to get live writing metrics and top words.</p>
+
+  <label for="wordInput">Text</label>
+  <textarea id="wordInput" rows="12" placeholder="Start typing..."></textarea>
+
+  <div class="stats-grid" id="statsGrid">
+    <div class="stat"><span>Words</span><strong id="statWords">0</strong></div>
+    <div class="stat"><span>Characters</span><strong id="statChars">0</strong></div>
+    <div class="stat"><span>Chars (no spaces)</span><strong id="statCharsNoSpaces">0</strong></div>
+    <div class="stat"><span>Sentences</span><strong id="statSentences">0</strong></div>
+    <div class="stat"><span>Paragraphs</span><strong id="statParagraphs">0</strong></div>
+    <div class="stat"><span>Reading time</span><strong id="statReadingTime">0 min</strong></div>
+  </div>
+
+  <h2>Most Frequent Words</h2>
+  <ul id="freqWords" class="freq-list"></ul>
+
+  <button id="exportStats" class="btn" type="button">Export Stats (.txt)</button>
+</section>
+
+<%- include('../partials/footer', { pageScript }) %>
