@@ -1,5 +1,5 @@
 (() => {
-  const SEARCH_DEBOUNCE_DELAY = 120;
+  const SEARCH_DEBOUNCE_DELAY = 120; // Keeps input responsive while avoiding filter work on every keystroke.
   const searchInput = document.getElementById('globalSearch');
   const tabs = [...document.querySelectorAll('#categoryTabs .tab')];
   const cards = [...document.querySelectorAll('#toolGrid .tool-card')];
@@ -7,9 +7,10 @@
   const filterSummary = document.getElementById('filterSummary');
   const resetFiltersButton = document.getElementById('resetFilters');
   const validCategories = new Set(tabs.map((tab) => tab.dataset.category));
+  const DEFAULT_CATEGORY = validCategories.has('all') ? 'all' : (tabs[0]?.dataset.category || 'all');
   const totalTools = cards.length;
   const params = new URLSearchParams(window.location.search);
-  let activeCategory = 'all';
+  let activeCategory = DEFAULT_CATEGORY;
   let searchDebounceTimer;
 
   const updateUrlState = (term) => {
@@ -61,17 +62,17 @@
   };
 
   const setCategory = (nextCategory) => {
-    activeCategory = validCategories.has(nextCategory) ? nextCategory : 'all';
+    activeCategory = validCategories.has(nextCategory) ? nextCategory : DEFAULT_CATEGORY;
     setActiveTab(activeCategory);
     applyFilters();
   };
 
   const resetFilters = () => {
-    clearTimeout(searchDebounceTimer);
     if (searchInput) {
+      clearTimeout(searchDebounceTimer);
       searchInput.value = '';
     }
-    setCategory('all');
+    setCategory(DEFAULT_CATEGORY);
   };
 
   tabs.forEach((tab) => {
@@ -120,7 +121,7 @@
   if (searchInput && initialQuery) {
     searchInput.value = initialQuery;
   }
-  activeCategory = validCategories.has(params.get('category')) ? params.get('category') : 'all';
+  activeCategory = validCategories.has(params.get('category')) ? params.get('category') : DEFAULT_CATEGORY;
   setActiveTab(activeCategory);
   applyFilters();
 })();
