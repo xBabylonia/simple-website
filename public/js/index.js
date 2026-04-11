@@ -67,6 +67,7 @@
   };
 
   const resetFilters = () => {
+    clearTimeout(searchDebounceTimer);
     if (searchInput) {
       searchInput.value = '';
     }
@@ -89,6 +90,7 @@
       return;
     }
     event.preventDefault();
+    clearTimeout(searchDebounceTimer);
     searchInput.value = '';
     applyFilters();
   });
@@ -118,5 +120,7 @@
   if (searchInput && initialQuery) {
     searchInput.value = initialQuery;
   }
-  setCategory(params.get('category') || 'all');
+  activeCategory = validCategories.has(params.get('category')) ? params.get('category') : 'all';
+  setActiveTab(activeCategory);
+  applyFilters();
 })();
