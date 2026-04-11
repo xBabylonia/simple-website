@@ -339,3 +339,108 @@ Tempel seluruh isi blok ` ``` ` di atas ke dalam:
 
 > *) Tools dengan tanda `*` adalah conditional tools — hanya aktif jika feature flag atau USER_TYPE tertentu diset.
 
+# SANDBOX CAPABILITIES — FULL MAP
+> .ai sandbox environment — Ubuntu 24.04 | Scanned: April 3, 2026
+
+---
+
+## 1. IMAGE & VISION
+- **OCR** — Tesseract + pytesseract (eng, osd langs) — extract text from images/scans
+- **AI Vision** — MediaPipe (Google) — face detection, pose estimation, hand landmarks
+- **Computer Vision** — OpenCV 4.13 with FFmpeg, OpenBLAS, SIMD, OpenCL, Qt5
+- **Image Manipulation** — ImageMagick 6.9.12 + Pillow + Wand — resize, crop, filters, composite, watermark, animate
+- **Image Processing** — scikit-image — segmentation, morphology, feature detection
+- **TIFF/RAW** — tifffile — read/write scientific TIFF files
+- **Font Manipulation** — ttx (FontTools) — convert TTF/OTF fonts ↔ XML and back
+
+## 2. VIDEO & AUDIO
+- **Video Processing** — FFmpeg 6.1 + ffprobe + ffplay — encode, decode, convert, trim, stream
+- **GIF Creation** — FFmpeg + ImageMagick animate — create animated GIFs from image sequences
+- **Timelapse** — FFmpeg — compile image sequences into video
+- **Python Video** — imageio-ffmpeg — frame-by-frame video I/O from Python
+- **Audio Processing** — scipy.signal + scipy.io.wavfile — read/write/process WAV files
+- **Audio Generation** — scipy signal synthesis — generate tones, waveforms, spectrograms
+
+## 3. WEB & BROWSER AUTOMATION
+- **Full Browser** — Playwright + Chromium 1194 (headless) — screenshot, scrape JS-rendered pages
+- **Virtual Display** — Xvfb + xvfb-run — run GUI apps headlessly (X11 virtual framebuffer)
+- **Web Scraping** — BeautifulSoup4 + requests + lxml — parse and extract HTML/XML
+- **Markdown Render** — grip — render GitHub-flavored Markdown as HTML in browser
+- **HTTP Tools** — netcat/nc — raw TCP/UDP connections
+- **Flask** — lightweight Python web server
+
+## 4. DOCUMENTS & PUBLISHING
+- **LaTeX** — TeX Live 2023 (pdflatex, xelatex, lualatex, bibtex) — full scientific typesetting
+- **Pandoc 3.1** — universal document converter (md ↔ pdf ↔ docx ↔ html ↔ epub ↔ rst + 40 more)
+- **LibreOffice Headless** — unoserver + unoconvert — convert DOCX/XLSX/PPTX → PDF silently
+- **Word Docs** — python-docx — create/edit .docx files programmatically
+- **Presentations** — python-pptx + pptxgenjs — create/edit .pptx files
+- **Spreadsheets** — openpyxl + xlsxwriter — create/edit .xlsx files
+- **PDF Creation** — ReportLab 4.4 + pikepdf + pypdf + pypdfium2 + img2pdf
+- **PDF Surgery** — pikepdf — read/write/repair/encrypt/decrypt PDFs at byte level
+- **PDF Extraction** — pdfplumber + camelot + tabula + pdfminer — extract text, tables, images
+- **PDF → Image** — pdf2image — convert PDF pages to PNG/JPEG
+- **Any File → Markdown** — markitdown (Microsoft) — convert PDF, DOCX, PPTX, images → Markdown
+- **ODF/OpenDocument** — odfpy — create/edit ODS, ODT, ODP files; csv2ods, odf2xhtml
+- **VBA Extraction** — vba_extract — extract VBA macros from Office files
+
+## 5. DATA & MACHINE LEARNING
+- **Data Analysis** — pandas + numpy + scipy — full data science stack
+- **Visualization** — matplotlib + seaborn — charts, plots, heatmaps
+- **Machine Learning** — scikit-learn — classification, regression, clustering, pipelines
+- **Graph Theory** — NetworkX 3.4 — shortest paths, community detection, social networks, graph algos
+- **Symbolic Math** — SymPy + isympy shell — solve equations, calculus, algebra, number theory
+- **AI Model Runtime** — ONNX Runtime 1.24 — run any .onnx AI model directly
+- **AI File Detection** — Magika 1.0 (Google) — AI-powered deep file type identification
+- **Precision Calculator** — bc -l — arbitrary precision math (50+ decimal places)
+
+## 6. DIAGRAMS & GRAPHICS
+- **Graphviz** — dot, neato, circo, fdp, sfdp, twopi, osage, patchwork — graph/diagram layout engines
+- **Graph → Image** — graphviz Python lib — generate flowcharts, dependency trees as PNG/SVG
+- **Vimdot** — vimdot — visual Graphviz editor
+- **ImageMagick draw** — convert + draw commands — generate images from code
+
+## 7. PROGRAMMING & COMPILERS
+- **Python 3.12** — full interpreter + pip
+- **Node.js + npm/npx** — JavaScript runtime
+- **Java 21 (OpenJDK)** — full JVM, compile & run Java programs
+- **GCC 13 + G++** — C and C++ compiler
+- **TypeScript** — ts-node, tsx, tsc — run TypeScript directly
+- **Perl 5.38** — full Perl interpreter
+- **Make + Git** — build tools and version control
+
+## 8. FONTS & TYPOGRAPHY
+- **299 fonts installed** including:
+  - Google Fonts: Poppins (all weights), Lora (variable)
+  - Noto CJK: Chinese (SC/TC), Japanese, Korean, Hong Kong
+  - DejaVu family, FreeSans/FreeSerif, Bitstream Charter
+  - LaTeX fonts: Latin Modern, TeX Gyre, STIX, Computer Modern
+  - X11 Type1 fonts, TrueType, OpenType
+- **ttx (FontTools)** — inspect/edit/convert font files
+
+## 9. SECURITY & CERTIFICATES
+- **certutil** — SSL/TLS certificate database management
+- **Java keytool** — Java keystore/certificate management
+- **PyJWT** — JSON Web Tokens
+- **cryptography** — Python cryptographic library
+
+## 10. FILE & SYSTEM TOOLS
+- **rclone v1.71** — sync to/from Google Drive, S3, Dropbox, 40+ cloud providers
+- **Magika** — AI file type detection (better than magic bytes)
+- **psutil** — system/process monitoring from Python
+- **watchdog** — file system event monitoring
+- **iconv** — character encoding conversion
+- **Tesseract training** — cntraining — train custom OCR models!
+
+## 11. BONUS / WILD COMBOS 🔥
+- Screenshot (Playwright) → Effects (ImageMagick) → Video (FFmpeg)
+- Scrape web → Analyze data (pandas) → Visualize (matplotlib) → PDF (ReportLab)
+- LaTeX math → PDF → Extract → Markdown (markitdown)
+- Any Office file → LibreOffice → PDF → Extract tables (camelot) → Excel
+- Train OCR model (Tesseract cntraining) on custom fonts
+- Run ONNX AI model → process results with OpenCV → annotate image → encode video
+- Build social network graph (NetworkX) → visualize (Graphviz) → beautiful PDF (LaTeX)
+- Generate fonts with ttx → embed in PDF → render with CJK support (Noto fonts)
+
+---
+*Total: 1067 binaries in /usr/bin | 59 in /usr/local/bin | 100+ Python packages | Java 21 | Node.js | GCC 13*
