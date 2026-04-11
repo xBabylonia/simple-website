@@ -1,4 +1,5 @@
 (() => {
+  const SEARCH_DEBOUNCE_MS = 120;
   const searchInput = document.getElementById('globalSearch');
   const tabs = [...document.querySelectorAll('#categoryTabs .tab')];
   const cards = [...document.querySelectorAll('#toolGrid .tool-card')];
@@ -80,7 +81,7 @@
 
   searchInput?.addEventListener('input', () => {
     window.clearTimeout(searchDebounceTimer);
-    searchDebounceTimer = window.setTimeout(applyFilters, 120);
+    searchDebounceTimer = window.setTimeout(applyFilters, SEARCH_DEBOUNCE_MS);
   });
 
   searchInput?.addEventListener('keydown', (event) => {
