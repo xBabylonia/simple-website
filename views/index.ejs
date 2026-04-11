@@ -14,6 +14,11 @@
   <button class="tab" data-category="security">Security</button>
 </section>
 
+<section class="inline-controls wrap">
+  <p id="filterSummary" class="muted">Showing <%= tools.length %> of <%= tools.length %> tools</p>
+  <button id="resetFilters" class="btn ghost hidden" type="button">Reset filters</button>
+</section>
+
 <section class="tool-grid" id="toolGrid">
   <% tools.forEach(tool => { %>
     <article class="tool-card card" data-name="<%= tool.name.toLowerCase() %>" data-desc="<%= tool.shortDescription.toLowerCase() %>" data-category="<%= tool.category.toLowerCase() %>">
