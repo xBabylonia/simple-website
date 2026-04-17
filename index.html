@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Babylonia Engine | Experience-First Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-1"></div>
+  <div class="ambient ambient-2"></div>
+  <div class="ambient ambient-3"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">B</span>
+      <span class="brand-name">Babylonia Engine</span>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#overview" class="nav-link active">Overview</a>
+        <a href="#engine" class="nav-link">Engine</a>
+        <a href="#modules" class="nav-link">Modules</a>
+        <a href="#clients" class="nav-link">Stories</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="ghost" href="#contact">Talk with us</a>
+        <a class="btn primary" href="#demo">Launch demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="overview">
+      <div class="hero__copy reveal">
+        <div class="eyebrow">Next-gen Experience Engine</div>
+        <h1>Build immersive, resilient products with the Babylonia engine.</h1>
+        <p class="lede">
+          A composable stack for teams that need confident delivery: orchestrate data, ship features, and adapt in real-time with one focused platform.
+        </p>
+        <div class="hero__actions">
+          <a class="btn primary" href="#demo">Start the live demo</a>
+          <a class="btn secondary" href="#engine">See the architecture</a>
+        </div>
+        <div class="hero__chips">
+          <span class="chip">Observability baked-in</span>
+          <span class="chip">Sub-50ms edge routing</span>
+          <span class="chip">Blueprints for any surface</span>
+        </div>
+      </div>
+      <div class="hero__panel reveal">
+        <div class="panel-header">
+          <div>
+            <p class="panel-label">Live control center</p>
+            <h3>Experience health</h3>
+          </div>
+          <span class="status success">All systems nominal</span>
+        </div>
+        <div class="panel-grid">
+          <div class="panel-card">
+            <p class="label">Latency</p>
+            <div class="metric">
+              <span class="value" data-counter data-target="42">0</span>
+              <span class="suffix">ms</span>
+            </div>
+            <p class="subtext">Edge tuned in 17 regions.</p>
+          </div>
+          <div class="panel-card">
+            <p class="label">Release quality</p>
+            <div class="metric">
+              <span class="value" data-counter data-target="99">0</span>
+              <span class="suffix">.9%</span>
+            </div>
+            <p class="subtext">Auto-rollbacks with guardrails.</p>
+          </div>
+          <div class="panel-card span-2">
+            <p class="label">Traffic shaping</p>
+            <div class="progress">
+              <div class="progress-bar" style="width: 74%"></div>
+            </div>
+            <div class="progress-meta">
+              <span>Predictive routing</span>
+              <span class="pill">+18% conversion</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="avatar-stack">
+            <span class="avatar">ZK</span>
+            <span class="avatar">MN</span>
+            <span class="avatar">AL</span>
+          </div>
+          <div>
+            <p class="label">Ops squad</p>
+            <p class="subtext">Coordinating six live launches this week.</p>
+          </div>
+          <button class="ghost">Open playbooks</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics reveal">
+      <div class="metric-card">
+        <p class="label">Reliability</p>
+        <h3><span data-counter data-target="99">0</span>.99%</h3>
+        <p class="subtext">Resilient mesh with self-healing nodes and canary failsafes.</p>
+      </div>
+      <div class="metric-card">
+        <p class="label">Speed</p>
+        <h3><span data-counter data-target="3">0</span>x faster</h3>
+        <p class="subtext">Blueprints cut delivery time from concept to prod.</p>
+      </div>
+      <div class="metric-card">
+        <p class="label">Adaptability</p>
+        <h3><span data-counter data-target="27">0</span> regions</h3>
+        <p class="subtext">Adaptive routing and policy controls built for multi-cloud.</p>
+      </div>
+    </section>
+
+    <section class="engine reveal" id="engine">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Engine Blueprint</p>
+          <h2>Opinionated primitives, powerful orchestration.</h2>
+          <p class="lede">Design fast, ship safely, and iterate with telemetry by default.</p>
+        </div>
+        <a class="ghost" href="#contact">Book an architecture review -></a>
+      </div>
+      <div class="engine-flow">
+        <article class="flow-card">
+          <div class="icon-badge">01</div>
+          <div>
+            <h3>Ingest</h3>
+            <p>Connect data, identity, and content streams with secure adapters.</p>
+          </div>
+          <span class="pill soft">Zero copy</span>
+        </article>
+        <article class="flow-card">
+          <div class="icon-badge">02</div>
+          <div>
+            <h3>Orchestrate</h3>
+            <p>Compose experiences with visual flows, triggers, and playbooks.</p>
+          </div>
+          <span class="pill soft">Policy aware</span>
+        </article>
+        <article class="flow-card">
+          <div class="icon-badge">03</div>
+          <div>
+            <h3>Compute</h3>
+            <p>Low-latency execution at the edge with smart caching and fan-out.</p>
+          </div>
+          <span class="pill soft">Sub-50ms</span>
+        </article>
+        <article class="flow-card">
+          <div class="icon-badge">04</div>
+          <div>
+            <h3>Safeguard</h3>
+            <p>Progressive rollouts with anomaly detection and kill-switches.</p>
+          </div>
+          <span class="pill soft">Guardrails</span>
+        </article>
+        <article class="flow-card">
+          <div class="icon-badge">05</div>
+          <div>
+            <h3>Ship</h3>
+            <p>Deliver cohesive UI kits, API layers, and content in one push.</p>
+          </div>
+          <span class="pill soft">Unified deploy</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="modules reveal" id="modules">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Modular by design</p>
+          <h2>Swap in only what you need.</h2>
+          <p class="lede">From content systems to experimentation, every module is composable and observable.</p>
+        </div>
+        <div class="module-legend">
+          <span class="pill">Secure-by-default</span>
+          <span class="pill alt">API-first</span>
+        </div>
+      </div>
+      <div class="module-grid">
+        <article class="module-card">
+          <div class="module-icon">ED</div>
+          <h3>Edge runtime</h3>
+          <p>Global routing with adaptive caching and geo-aware compute.</p>
+        </article>
+        <article class="module-card">
+          <div class="module-icon">XM</div>
+          <h3>Experience maps</h3>
+          <p>Visual flows to orchestrate journeys, triggers, and fallbacks.</p>
+        </article>
+        <article class="module-card">
+          <div class="module-icon">TR</div>
+          <h3>Trust layer</h3>
+          <p>Policy management, rate controls, and live audits built in.</p>
+        </article>
+        <article class="module-card">
+          <div class="module-icon">CP</div>
+          <h3>Control plane</h3>
+          <p>Single panel for experiments, releases, and health signals.</p>
+        </article>
+        <article class="module-card">
+          <div class="module-icon">CK</div>
+          <h3>Composable kits</h3>
+          <p>UI components, content blocks, and APIs ready to ship.</p>
+        </article>
+        <article class="module-card">
+          <div class="module-icon">OB</div>
+          <h3>Observability</h3>
+          <p>Tracing, heatmaps, and anomaly alerts without extra wiring.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience reveal" id="demo">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">UI/UX crafted</p>
+          <h2>Designed for clarity, speed, and delight.</h2>
+          <p class="lede">Everything is tuned for quick navigation and confident decisions - on any screen.</p>
+        </div>
+        <a class="ghost" href="#overview">Return to top ^</a>
+      </div>
+      <div class="experience-grid">
+        <div class="experience-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-label">Navigation preview</p>
+              <h3>Control plane</h3>
+            </div>
+            <span class="pill">Live</span>
+          </div>
+          <div class="stacked-list">
+            <div class="stacked-row">
+              <div>
+                <p class="label">Launch: Sunrise</p>
+                <p class="subtext">Conversion uplift experiment - 12 cohorts</p>
+              </div>
+              <span class="status pulse">Monitoring</span>
+            </div>
+            <div class="stacked-row">
+              <div>
+                <p class="label">Blueprint: Atlas</p>
+                <p class="subtext">Composable UI kit synced to devices</p>
+              </div>
+              <span class="pill alt">Synced</span>
+            </div>
+            <div class="stacked-row">
+              <div>
+                <p class="label">Policy mesh</p>
+                <p class="subtext">Regions: 12 - Zero drift</p>
+              </div>
+              <span class="pill">Guarded</span>
+            </div>
+            <div class="stacked-row">
+              <div>
+                <p class="label">AI routing</p>
+                <p class="subtext">Predictive pathways for mobile/web</p>
+              </div>
+              <span class="pill alt">Adaptive</span>
+            </div>
+          </div>
+        </div>
+        <div class="experience-panel highlight">
+          <div class="panel-header">
+            <div>
+              <p class="panel-label">Customer view</p>
+              <h3>Moments that feel effortless.</h3>
+            </div>
+            <span class="status success">UX Grade A</span>
+          </div>
+          <div class="moment-grid">
+            <div class="moment-card">
+              <p class="label">Responsive layouts</p>
+              <p class="subtext">Adaptive grids keep clarity from mobile to ultra-wide.</p>
+            </div>
+            <div class="moment-card">
+              <p class="label">Accessible motion</p>
+              <p class="subtext">Meaningful reveals respect user preference for reduced motion.</p>
+            </div>
+            <div class="moment-card">
+              <p class="label">Micro-feedback</p>
+              <p class="subtext">Hover, focus, and press states give confident affordances.</p>
+            </div>
+            <div class="moment-card">
+              <p class="label">System thinking</p>
+              <p class="subtext">Consistent spacing scale and color tokens for quick scanning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials reveal" id="clients">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Trusted partners</p>
+          <h2>Teams build boldly with Babylonia.</h2>
+        </div>
+        <div class="pill alt">Enterprise & growth teams</div>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <p class="quote">\"We shipped a cross-platform refresh in six weeks. The playbooks kept risk low even with 6M users online.\"</p>
+          <div class="person">
+            <div class="avatar">AR</div>
+            <div>
+              <p class="label">Anya Rao</p>
+              <p class="subtext">VP Product, Altitude</p>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <p class="quote">\"Experimentation, observability, and delivery in one engine. Our designers prototype and deploy in the same loop.\"</p>
+          <div class="person">
+            <div class="avatar">JD</div>
+            <div>
+              <p class="label">Jamal Diaz</p>
+              <p class="subtext">Head of Platform, Morrow Labs</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta reveal" id="contact">
+      <div class="cta-card">
+        <div>
+          <p class="eyebrow">Ready to go live?</p>
+          <h2>Let's ship your next experience together.</h2>
+          <p class="lede">Design sessions, architecture reviews, and a guided demo to fit your roadmap.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn primary" href="mailto:hello@babylonia.dev">Book a session</a>
+          <a class="btn secondary" href="#overview">Preview the engine</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="brand">
+      <span class="brand-mark">B</span>
+      <span class="brand-name">Babylonia Engine</span>
+    </div>
+    <p class="subtext">Composable experience engine for teams that build fast and care about every detail.</p>
+    <div class="footer-links">
+      <a href="#engine">Architecture</a>
+      <a href="#modules">Modules</a>
+      <a href="#clients">Stories</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
